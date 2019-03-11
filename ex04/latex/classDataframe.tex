@@ -1,0 +1,59 @@
+\hypertarget{classDataframe}{}\section{Dataframe Class Reference}
+\label{classDataframe}\index{Dataframe@{Dataframe}}
+
+
+\hyperlink{classDataframe}{Dataframe} header file.  
+
+
+
+
+{\ttfamily \#include $<$Dataframe.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries dataframe\+\_\+t} = std\+::array$<$ uint8\+\_\+t, 255 $>$\hypertarget{classDataframe_ae8b44f2b26f8d1f9de02e3e3553ae0f8}{}\label{classDataframe_ae8b44f2b26f8d1f9de02e3e3553ae0f8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataframe_aa477a9e2ad938c736318df7263e5317c}{Dataframe} ()\hypertarget{classDataframe_aa477a9e2ad938c736318df7263e5317c}{}\label{classDataframe_aa477a9e2ad938c736318df7263e5317c}
+
+\begin{DoxyCompactList}\small\item\em struct used for data and dataframes \end{DoxyCompactList}\item 
+\hyperlink{classDataframe_aada0afc4e1f7ba4d5c8a6ff43d1ff8fe}{$\sim$\+Dataframe} ()\hypertarget{classDataframe_aada0afc4e1f7ba4d5c8a6ff43d1ff8fe}{}\label{classDataframe_aada0afc4e1f7ba4d5c8a6ff43d1ff8fe}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classDataframe_aa778c73cc845a6f303965d892f535af2}{set\+Data} (const Dataframe\+::dataframe\+\_\+t \&data, std\+::uint8\+\_\+t size)\hypertarget{classDataframe_aa778c73cc845a6f303965d892f535af2}{}\label{classDataframe_aa778c73cc845a6f303965d892f535af2}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classDataframe_af06fecbdf1240423ffa226d485381179}{set\+Checksum} ()\hypertarget{classDataframe_af06fecbdf1240423ffa226d485381179}{}\label{classDataframe_af06fecbdf1240423ffa226d485381179}
+
+\begin{DoxyCompactList}\small\item\em sets Data into a dataframe, adding header, size and checksum \end{DoxyCompactList}\item 
+void \hyperlink{classDataframe_ab6261590cc8372c851d4d91dc8c040e1}{set\+Dataframe} (const Dataframe\+::dataframe\+\_\+t \&dataframe)\hypertarget{classDataframe_ab6261590cc8372c851d4d91dc8c040e1}{}\label{classDataframe_ab6261590cc8372c851d4d91dc8c040e1}
+
+\begin{DoxyCompactList}\small\item\em sets the checksum, used by set\+Data \end{DoxyCompactList}\item 
+std\+::array$<$ std\+::uint8\+\_\+t, 255 $>$ \hyperlink{classDataframe_af10dc242c0f25b30a31d2ce091230729}{get\+Dataframe} ()\hypertarget{classDataframe_af10dc242c0f25b30a31d2ce091230729}{}\label{classDataframe_af10dc242c0f25b30a31d2ce091230729}
+
+\begin{DoxyCompactList}\small\item\em Parameter has to be a full dataframe, including header, size and checksum. \end{DoxyCompactList}\item 
+void \hyperlink{classDataframe_a5facab5165e8924c4094a520e2955c75}{show} () const \hypertarget{classDataframe_a5facab5165e8924c4094a520e2955c75}{}\label{classDataframe_a5facab5165e8924c4094a520e2955c75}
+
+\begin{DoxyCompactList}\small\item\em returns the dataframe \end{DoxyCompactList}\item 
+void \hyperlink{classDataframe_ae0debedd55c0f908313f57bfb458dee9}{show\+All} () const \hypertarget{classDataframe_ae0debedd55c0f908313f57bfb458dee9}{}\label{classDataframe_ae0debedd55c0f908313f57bfb458dee9}
+
+\begin{DoxyCompactList}\small\item\em shows the used elements in the dataframe, up to and including the checksum \end{DoxyCompactList}\item 
+bool \hyperlink{classDataframe_a7e1c56a10758775470f9550aaf0c1730}{checksum\+Is\+Correct} () const \hypertarget{classDataframe_a7e1c56a10758775470f9550aaf0c1730}{}\label{classDataframe_a7e1c56a10758775470f9550aaf0c1730}
+
+\begin{DoxyCompactList}\small\item\em shows all elements in the dataframe array \end{DoxyCompactList}\item 
+void \hyperlink{classDataframe_abb1672538595a1189ab19583504b9803}{clear} ()\hypertarget{classDataframe_abb1672538595a1189ab19583504b9803}{}\label{classDataframe_abb1672538595a1189ab19583504b9803}
+
+\begin{DoxyCompactList}\small\item\em checks if the checksum is correct \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDataframe}{Dataframe} header file. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Dataframe.\+h\item 
+Dataframe.\+cpp\end{DoxyCompactItemize}

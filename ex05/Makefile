@@ -1,7 +1,7 @@
 CXX = g++ 
 CXXFLAGS = -std=c++17 -g -Wall -Wextra
 
-EXECUTABLE = CommandProcessor
+EXECUTABLE = RotationMotor
 SOURCES = ${wildcard *.cpp}
 HEADERS = ${wildcard *.h}
 OBJECTS = ${SOURCES:.cpp=.o}

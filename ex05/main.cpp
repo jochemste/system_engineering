@@ -1,69 +1,33 @@
 #include "RotationMotor.h"
+#include "CommandProcessor.h"
 
+#include <functional>
 #include <iostream>
 #include <string>
 
 int main(void)
 {
-  RotationMotor rm;
-  bool exitRequested = false;
+  RotationMotor rotMot;
+  CommandProcessor cmdp;
   std::string command;
+  auto i=0;
 
-  while(!exitRequested)
-  {
-    std::cout << "\nCommand: ";
+  cmdp.addCommand("start", [&i, &rotMot](){ i=rotMot.start(); });
+  cmdp.addCommand("restart", [&i, &rotMot](){ i=rotMot.restart(); });
+  cmdp.addCommand("shutdown", [&i, &rotMot](){ i=rotMot.shutdown(); });
+  cmdp.addCommand("incRPM", [&i, &rotMot](){ i=rotMot.incRPM(); });
+  cmdp.addCommand("decRPM", [&i, &rotMot](){ i=rotMot.decRPM(); });
+
+  cmdp.addCommand("getRPM", [&i, &rotMot](){ i=rotMot.getRPM(); } );
+  
+  while(command != "q"){
+    std::cout << "Enter command: ";
     std::cin >> command;
 
-    if(command == "start")
-    {
-      if(rm.start())
-	std::cout << "Started" << std::endl;
-      else
-	std::cerr << "FAILED: Motor already started";
-    }
-    else if(command == "shutdown")
-    {
-      if(rm.shutdown())
-	std::cout << "Shutdown successful" << std::endl;
-      else
-	std::cerr << "FAILED: Motor already shutdown";
-    }
-    else if(command == "restart")
-    {
-      if(rm.restart())
-	std::cout << "Restarted. Rpm: " << rm.getRPM() << std::endl;
-      else
-	std::cerr << "FAILED: Motor not started.";
-    }
-    else if(command == "inc")
-    {
-      if(rm.incRPM())
-	std::cout << "RPM increased to " << rm.getRPM() << std::endl;
-      else
-	std::cerr << "FAILED: Motor not started.";
-    }
-    else if(command == "dec")
-    {
-      if(rm.decRPM())
-	std::cout << "RPM decreased to " << rm.getRPM() << std::endl;
-      else
-	std::cerr << "FAILED: Motor not started.";
-    }
-    else if(command == "get")
-    {
-      if(rm.getRPM() != -1)
-	std::cout << "RPM: " << rm.getRPM() << std::endl;
-      else
-	std::cerr << "FAILED: Motor not started.";
-    }
-    else if(command == "exit")
-    {
-      exitRequested = true;
-    }
-    else
-    {
-      std::cerr << "ERROR: Command unknown: " << command;
-    }
+    if(command != "q")
+      cmdp.executeCommand(command);
+
+    std::cout << command << ": " << i << std::endl;
   }
   
   return 0;

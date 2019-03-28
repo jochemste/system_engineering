@@ -17,7 +17,7 @@ class CommandProcessor{
   void executeCommand(const std::string& command);
   
  private:
-  std::map<std::string, commanfunction_t> commands_;
+  std::map<std::string, commandfunction_t> commands_;
 };
 
 #endif

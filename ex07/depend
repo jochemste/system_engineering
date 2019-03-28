@@ -1,0 +1,3 @@
+CartVec2D.o: CartVec2D.cpp CartVec2D.h
+DOFxyRz.o: DOFxyRz.cpp DOFxyRz.h CartVec2D.h
+main.o: main.cpp DOFxyRz.h CartVec2D.h

@@ -1,0 +1,2 @@
+CartVec2D.o: CartVec2D.cpp CartVec2D.h
+main.o: main.cpp CartVec2D.h

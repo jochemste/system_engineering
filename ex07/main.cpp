@@ -1,5 +1,4 @@
 #include "DOFxyRz.h"
-#include "CartVec2D.h"
 
 #include <iostream>
 
@@ -16,6 +15,16 @@ int main(void){
   std::cout << "roo2: " << roo2 << std::endl;
 
   roomba += roo2;
+  
+  std::cout << "roomba: " << roomba << std::endl;
+  std::cout << "roo2: " << roo2 << std::endl;
+
+  roomba = roomba + 4.0;
+  
+  std::cout << "roomba: " << roomba << std::endl;
+  std::cout << "roo2: " << roo2 << std::endl;
+
+  roomba = roomba - 8.0;
   
   std::cout << "roomba: " << roomba << std::endl;
   std::cout << "roo2: " << roo2 << std::endl;

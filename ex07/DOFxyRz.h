@@ -1,10 +1,13 @@
 #include "CartVec2D.h"
 
 #include <iostream>
+#include <cmath>
 
 class DOFxyRz{
   friend std::ostream& operator<<(std::ostream& os, const DOFxyRz& rhs);
   friend DOFxyRz operator+(const DOFxyRz& lhs, const CartVec2D& rhs);
+  friend DOFxyRz operator+(const DOFxyRz& lhs, const double& rhs);
+  friend DOFxyRz operator-(const DOFxyRz& lhs, const double& rhs);  
   friend DOFxyRz operator-(const DOFxyRz& lhs, const CartVec2D& rhs);
   friend DOFxyRz operator-(const DOFxyRz& rhs);
   friend DOFxyRz operator*(const DOFxyRz& lhs, const double& rhs);
@@ -24,6 +27,7 @@ class DOFxyRz{
   DOFxyRz &operator*=(const double& rhs);
   DOFxyRz &operator/=(const double& rhs);
 
+  CartVec2D heading() const;
   void setZ(double z);
   double getZ() const;
   
@@ -31,6 +35,10 @@ class DOFxyRz{
   CartVec2D cartvec_;
   double rz_;
 };
+
+inline CartVec2D heading() const{
+  CartVec2D heading;
+}
 
 inline void DOFxyRz::setZ(double z){
   rz_ = z;
